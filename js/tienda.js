@@ -108,10 +108,10 @@ function toggleVisibility() {
 
     if (form.style.display === "none") {
         form.style.display = "block";
-        toggleButton.textContent = "Añadir Productos";
+        toggleButton.textContent = "Ocultar";
     } else {
         form.style.display = "none";
-        toggleButton.textContent = "Ocultar";
+        toggleButton.textContent = "Añadir Productos";
     }
 }
 window.onload = inicializacion;
