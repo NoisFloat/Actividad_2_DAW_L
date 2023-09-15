@@ -65,7 +65,7 @@ function pintarHTML() {
 
         // Inserta la nueva fila en la tabla
         insertarNuevaFila.innerHTML += nuevaFila;
-        ventaDelDia.innerHTML ='La venta del dia de hoy es ' + ventaTotal;
+        ventaDelDia.innerHTML ='La venta del dia de hoy es ' + ventaTotal + '$';
     });
 
     alert('Insertaste un producto');
@@ -108,10 +108,10 @@ function toggleVisibility() {
 
     if (form.style.display === "none") {
         form.style.display = "block";
-        toggleButton.textContent = "Ocultar Formulario";
+        toggleButton.textContent = "Añadir Productos";
     } else {
         form.style.display = "none";
-        toggleButton.textContent = "Mostrar Formulario";
+        toggleButton.textContent = "Ocultar";
     }
 }
 window.onload = inicializacion;
