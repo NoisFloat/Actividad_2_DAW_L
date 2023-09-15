@@ -59,7 +59,9 @@ function pintarHTML() {
                 <td>${pintarNombreProducto}</td>
                 <td>${pintarDescripcionProducto}</td>
                 <td>${pintarPrecioProducto}$</td>
-                <td>${pintarFechaProducto}</td>
+                <td>${pintarFechaProducto}</td>}
+                <td><button class="btn btn-primary" id="modificar-${pintarIdProduct}">Modificar</button></td>
+                <td><button class="btn btn-danger" id="eliminar-${pintarIdProduct}">Eliminar</button></td>
             </tr>
         `;
 
