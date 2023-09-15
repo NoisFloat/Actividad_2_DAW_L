@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="js\tienda.js"></script>
+</head>
+
+<body>
+    <!--Inicio De Formulario-->
+    <div class="container mt-5 ocultar-mostrar">
+        <h2>Formulario de Producto</h2>
+        <button id="toggleForm" class="btn btn-secondary float-end m-2" onclick="toggleVisibility()">Mostrar
+            Formulario</button>
+        <p id="divVenta"></p>
+        <form action="javascript:void(0);" name="formProductos" id="formProductos" style="display: none;">
+            <div class="mb-3">
+                <label for="nombreProducto" class="form-label">Nombre del Producto</label>
+                <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" required />
+            </div>
+            <div class="mb-3">
+                <label for="descripcionProducto" class="form-label">Descripción del Producto</label>
+                <textarea class="form-control" id="descripcionProducto" name="descripcionProducto" rows="3"
+                    required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="precioProducto" class="form-label">Precio del Producto</label>
+                <input type="number" class="form-control" id="precioProducto" name="precioProducto" step="0.01"
+                    required />
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Producto</button>
+        </form>
+    </div>
+
+    <!--Tabla Productos-->
+    <div class="container mt-5">
+        <h2>Tabla de Productos</h2>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Producto</th>
+                    <th>Descripción del Producto</th>
+                    <th>Precio del Producto</th>
+                    <th>Fecha de Venta</th>
+                </tr>
+            </thead>
+            <tbody id="fila"> <!--Aqui se insertaran los productos-->
+
+                <!--Aqui se insertaran los productos-->
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
