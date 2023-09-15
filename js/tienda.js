@@ -6,6 +6,7 @@ function inicializacion() {
         var obtenerNombreDeProducto = document.getElementById('nombreProducto').value;
         var obtenerDescripcionDeProducto = document.getElementById('descripcionProducto').value;
         var obtenerPrecioDeProducto = parseFloat(document.getElementById('precioProducto').value);
+
         insertarNuevoProducto(obtenerNombreDeProducto, obtenerDescripcionDeProducto, obtenerPrecioDeProducto);
     };
 }
@@ -54,14 +55,14 @@ function pintarHTML() {
         ventaTotal += objetoProducto.precio;
         // Crea una nueva fila en la tabla con los datos del producto
         const nuevaFila = `
-<tr>
+            <tr>
                 <td> ${pintarIdProduct}</td>
                 <td>${pintarNombreProducto}</td>
                 <td>${pintarDescripcionProducto}</td>
                 <td>${pintarPrecioProducto}$</td>
                 <td>${pintarFechaProducto}</td>
-                <td><button class="btn btn-primary" id="modificar-${pintarIdProduct}">Modificar</button></td>
-                <td><button class="btn btn-danger" id="eliminar-${pintarIdProduct}">Eliminar</button></td>
+                <td><button class="modificar btn btn-primary" id="${pintarIdProduct}">Modificar</button></td>
+                <td><button class="btn btn-danger" id="${pintarIdProduct}">Eliminar</button></td>
             </tr>
         `;
 
@@ -70,13 +71,36 @@ function pintarHTML() {
         ventaDelDia.innerHTML = 'La venta del dia de hoy es ' + ventaTotal + '$';
     });
 
-    alert('Insertaste un producto');
+    alert('Insertaste un producto o modificaste uno');
 
     //Obten el espacio para poner la venta del dia
 
-
+    var botonesModificar = document.querySelectorAll('.modificar.btn.btn-primary');
+    // Agrega un manejador de eventos clic a cada botón "Modificar"
+    botonesModificar.forEach(function (boton) {
+      boton.addEventListener('click', function () {
+        // Obtiene el ID del botón que se hizo clic
+        var id = this.id;
+        // Haz algo con el ID, como enviarlo a una función para realizar modificaciones
+        alert('Se hizo clic en el botón Modificar con ID:'+ id + "y se eliminara este producto");
+        eliminarProducto(id,1,undefined);
+      });
+    });
 }
 
+
+
+
+
+function eliminarProducto(id, numero,paquequedenull) {
+    productos.splice(id,numero,paquequedenull);
+    alert('Haz eliminado un producto');
+    pintarHTML();
+}
+
+function modificarProductos(id,nombre,descripcion,precio,fecha){
+
+}
 
 
 
