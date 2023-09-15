@@ -41,7 +41,7 @@ function pintarHTML() {
     const ventaDelDia = document.getElementById('divVenta'); // Reemplaza 'divVenta' con el ID del elemento donde deseas mostrar la venta
     // Vacía el contenido actual del elemento
     ventaDelDia.innerHTML = "";
-     var ventaTotal = 0;
+    var ventaTotal = 0;
     // Itera sobre cada producto en el arreglo 'productos'
     productos.forEach(objetoProducto => {
         // Accede a las propiedades de cada objeto
@@ -50,16 +50,16 @@ function pintarHTML() {
         const pintarDescripcionProducto = objetoProducto.descripcionProducto;
         const pintarPrecioProducto = objetoProducto.precio;
         const pintarFechaProducto = objetoProducto.fecha;
-       
+
         ventaTotal += objetoProducto.precio;
         // Crea una nueva fila en la tabla con los datos del producto
         const nuevaFila = `
-            <tr>
-                <td>${pintarIdProduct}</td>
+<tr>
+                <td> ${pintarIdProduct}</td>
                 <td>${pintarNombreProducto}</td>
                 <td>${pintarDescripcionProducto}</td>
                 <td>${pintarPrecioProducto}$</td>
-                <td>${pintarFechaProducto}</td>}
+                <td>${pintarFechaProducto}</td>
                 <td><button class="btn btn-primary" id="modificar-${pintarIdProduct}">Modificar</button></td>
                 <td><button class="btn btn-danger" id="eliminar-${pintarIdProduct}">Eliminar</button></td>
             </tr>
@@ -67,11 +67,11 @@ function pintarHTML() {
 
         // Inserta la nueva fila en la tabla
         insertarNuevaFila.innerHTML += nuevaFila;
-        ventaDelDia.innerHTML ='La venta del dia de hoy es ' + ventaTotal + '$';
+        ventaDelDia.innerHTML = 'La venta del dia de hoy es ' + ventaTotal + '$';
     });
 
     alert('Insertaste un producto');
-    
+
     //Obten el espacio para poner la venta del dia
 
 
